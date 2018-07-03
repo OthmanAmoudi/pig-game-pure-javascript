@@ -204,6 +204,6 @@ i {
     }
 }
 
-.winner { background-color: #6cff8c; }
+.winner { background-color: #00cf0a8f; }
 .loser { background-color: #ffc267; }
 .winner .player-name { font-weight: 300; color: #EB4D4D; }
