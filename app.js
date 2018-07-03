@@ -61,7 +61,7 @@ function rollDice(){
         diceImg2.src = `dice-${dice2}.png`;
         temporaryScore.push(dice);
         temporaryScore2.push(dice2);
-        return temporaryScore
+        //return temporaryScore
     }
 }
 
@@ -88,9 +88,6 @@ function playerTurn(player){
     if(temporaryScore.includes(1) || temporaryScore2.includes(1)) {
         points = 0
         points2 = 0
-        temporaryScore = [];
-        temporaryScore2 = [];
-        turn++;
         player.innerHTML = 0
         keepUpdating()
         return;
@@ -107,8 +104,6 @@ function holdPoints(){
             var points = points1 + points2;
             turn % 2 !== 0 ? user_1_score+=points : user_2_score+=points;
             turn % 2 !== 0 ? player_1_score.innerHTML = user_1_score : player_2_score.innerHTML = user_2_score;
-            temporaryScore = [];
-            turn++;
             keepUpdating()
         }
     }else{
@@ -129,6 +124,11 @@ function shakeRollBtnAlert(){
 }
 
 function keepUpdating(){
+    turn++;
+    player_1_current.innerHTML = 0
+    player_2_current.innerHTML = 0
+    temporaryScore = [];
+    temporaryScore2 = [];
     if(turn % 2 !== 0){
         setTimeout(()=>{
             player_2_panel.classList.remove('active');
